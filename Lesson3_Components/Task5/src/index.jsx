@@ -11,5 +11,5 @@ export const userData = {
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Profile/>, rootElement);
+ReactDOM.render(<Profile userData={userData}/>, rootElement);
 
