@@ -6,7 +6,7 @@ class Spinner extends React.Component {
     }
 
   render() {
-    return <div className="spinner" style={{height:this.props.size, width: this.props.size }}></div>;
+    return <div className="spinner" style={{height:this.props.size, width: props.size }}></div>;
   }
 }
 

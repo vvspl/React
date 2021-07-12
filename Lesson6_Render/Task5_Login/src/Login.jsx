@@ -1,12 +1,23 @@
 import React from 'react';
-import { render } from 'react-dom';
-import Auth from './Auth';
 
 class Login extends React.Component {
-  onLogin = () =>  { return <Auth isLogged={true}/>; }  
-    
+
+  onLogin(){
+    this.props.toggle(true, true);
+      setTimeout(() => {
+        this.props.toggle(true, false);
+        }, 2000);
+    };
+
   render() {
-    return <button className="btn login" onClick={this.onLogin}>Login</button>;
+    return (
+      <button
+        className="login btn"
+        onClick={()=>this.onLogin()}
+      >
+        Login
+      </button>
+    );
   }
 }
 

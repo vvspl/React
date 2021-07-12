@@ -1,9 +1,11 @@
 import React from 'react';
 
 class Logout extends React.Component {
-  onLogout = () => { console.log('hallo')};
+  onLogout(){
+    this.props.toggle(false, true);
+}
   render() {
-    return <button className="btn" onClick={this.onLogin}>Logout</button>;
+    return <button className="logout btn" onClick={()=>this.onLogout()}>Logout</button>;
   }
 }
 

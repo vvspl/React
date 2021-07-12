@@ -5,19 +5,22 @@ import Spinner from './Spinner';
 import Logout from './Logout';
 
 class Auth extends React.Component {
-  constructor(props){
-      console.log('Props:', props);
-    super(props);
-    this.state = {
-      isLogged: false,
-    };
-  }
+  state = {
+    isLogged: false,
+    spinOn: true,
+  };
+
+  toggle = (log, spin) => {
+    this.setState({ isLogged: log, spinOn: spin });
+  };
+
+
   render() {
-    if (!this.isLogged) return <Login />;
-    else {
-      setTimeout(() => <Spinner size={30} />, 2000);
-      return <Logout />;
-    }
+    console.log(this.state.isLogged, this.state.spinOn, );
+    if (!this.state.isLogged) return <Login toggle={this.toggle} />;
+    else if (this.state.spinOn) {
+      return <Spinner size={30} />;}
+      return <Logout toggle={this.toggle} />;
   }
 }
 
