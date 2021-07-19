@@ -5,27 +5,22 @@ class Expand extends React.Component {
     isOpen: false,
   };
 
-  onClose = () => {
+  toggle = () => {
     this.setState({
-      isOpen: false,
+      isOpen: !this.state.isOpen,
     });
   };
 
-  onOpen = () => {
-    this.setState({
-      isOpen: true,
-    });
-  };
   render() {
     return (
       <div className="expand border">
         <div className="expand__header">
           <span className="expand__title">{this.props.title}</span>
-          <button className="expand__toggle-btn">
+          <button className="expand__toggle-btn" onClick={this.toggle}>
             {this.state.isOpen ? (
-              <i className="fas fa-chevron-up" onClick={this.onClose}></i>
+              <i className="fas fa-chevron-up" ></i>
             ) : (
-              <i className="fas fa-chevron-down" onClick={this.onOpen}></i>
+              <i className="fas fa-chevron-down"></i>
             )}
           </button>
         </div>
